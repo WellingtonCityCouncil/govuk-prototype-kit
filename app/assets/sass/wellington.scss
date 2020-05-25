@@ -8,9 +8,22 @@
 @import "node_modules/govuk-frontend/govuk/settings/all";
 
 // Override the default GOV.UK Frontend font stack
-$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+$govuk-font-family: 'Helvetica Condensed Light','Helvetica Neue',Arial,sans-serif;
 
-// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
-$govuk-canvas-background-colour: $govuk-body-background-colour;
+/* Wellington City Council colour */
+$govuk-brand-colour: #ffcc00;
 
 @import "application";
+
+@import "node_modules/govuk-frontend/govuk/core/_all";
+@import "node_modules/govuk-frontend/govuk/helpers/_typography";
+
+.govuk-header__link--service-name {
+  @include govuk-font($size: 24, $weight: 100);
+  font-weight: 100;
+}
+
+.govuk-footer__copyright-logo{
+  background-image: none;
+  padding-top: 0;
+}
