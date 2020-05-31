@@ -1,22 +1,14 @@
-// The unbranded stylesheet is used if you need to create pages in your
-// prototype without the GOV.UK branding.
-//
-// See localhost:3000/docs/templates/blank-unbranded
+@import "settings";
 
-// Import settings first so we can override them before importing all of GOV.UK Frontend
-// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
-@import "node_modules/govuk-frontend/govuk/settings/all";
+@import "node_modules/govuk-frontend/govuk/all.scss";
 
-// Override the default GOV.UK Frontend font stack
-$govuk-font-family: 'Helvetica Condensed Light','Helvetica Neue',Arial,sans-serif;
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-nav";
+@import "patterns/task-list";
+@import "patterns/related-items";
 
-/* Wellington City Council colour */
-$govuk-brand-colour: #ffcc00;
-
-@import "application";
-
-@import "node_modules/govuk-frontend/govuk/core/_all";
-@import "node_modules/govuk-frontend/govuk/helpers/_typography";
+// Components that aren't in Frontend
+@import "components/cookie-banner";
 
 .govuk-header__link--service-name {
   @include govuk-font($size: 24, $weight: 100);

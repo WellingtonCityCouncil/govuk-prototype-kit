@@ -21,7 +21,6 @@ requireDir('./gulp', { recurse: true })
 const assets = function (cb) {
   gulp.series(
     'clean',
-    'sass-extensions',
     gulp.parallel(
       'sass',
       'copy-assets'
@@ -46,7 +45,6 @@ const html = function (cb) {
 
 
 const copyuk = function(cb) {
-  gulp.src(['node_modules/govuk-frontend/govuk/assets/fonts/*']).pipe(gulp.dest('public/govuk/assets/fonts/'));
   gulp.src(['node_modules/govuk-frontend/govuk/all.js']).pipe(gulp.dest('public/govuk/'));
   cb();
 }
